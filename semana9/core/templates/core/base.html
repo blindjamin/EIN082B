@@ -9,19 +9,30 @@
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
 </head>
 <body>
+    
+
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon" id="menu-icon">
+                &#9776; <!-- Ícono de menú hamburguesa -->
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'carreras' %}">Carreras</a></li>
+                <li><a href="{% url 'profesores' %}">Profesores</a></li>
+                <li><a href="http://elinf.usm.cl">Sitio Elinf</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <h1>{{ titulo }}</h1>
 
-    <ul>
-        <li><a href="{% url 'home' %}">Inicio</a></li>
-        <li><a href="{% url 'carreras' %}">Carreras</a></li>
-        <li><a href="{% url 'profesores' %}">Profesores</a></li>
-        <li><a href="http://elinf.usm.cl">Sitio Elinf</a></li>
-    </ul>
-    <hr>
-
+    <!-- Contenido que variará según la plantilla extendida -->
     {% block main %}
-
     {% endblock %}
+
+    <!-- Script para el funcionamiento del menú hamburguesa -->
+    <script src="{% static 'core/js/menu.js' %}"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ def home(request):
     data = {
         "titulo": titulo
     }
-    return render(request,'core/index.html', data)
+    return render(request,'core/home.html', data)
 
 def carreras(request):
     titulo = "Carreras"
@@ -25,4 +25,7 @@ def carreras(request):
 def profesores(request):
     titulo = "Profesores"
     h1 = "<h1> "+ titulo + "</h1>"
-    return HttpResponse(h1)
+    data = {
+        "titulo":titulo
+    }
+    return render(request, "core/profesores.html", data)
